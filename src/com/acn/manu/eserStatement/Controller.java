@@ -2,6 +2,7 @@ package com.acn.manu.eserStatement;
 
 import com.acn.manu.dto.DTOEmployee;
 import com.acn.manu.eserStatement.callablestatement.CreateCS;
+import com.acn.manu.eserStatement.callablestatement.Eser;
 import com.acn.manu.eserStatement.preparestatement.CreatePS;
 import com.acn.manu.eserStatement.preparestatement.DeletePS;
 import com.acn.manu.eserStatement.statement.Create;
@@ -34,6 +35,7 @@ public class Controller {
     private CreatePS createps;
     private DeletePS deleteps;
     private CreateCS createcs;
+    private Eser eser;
 
     public Controller() {
         create = new Create();
@@ -46,6 +48,7 @@ public class Controller {
         createps = new CreatePS();
         deleteps = new DeletePS();
         createcs=new CreateCS();
+        eser=new Eser();
     }
 
     //STATEMENT
@@ -190,6 +193,15 @@ public class Controller {
         System.out.println("Inserire DEPARTMENT_ID");
         int idDepartment = input.nextInt();
         int n=createcs.create(idE, sd, ed, idE, idDepartment);
+        System.out.println("Procedura eseguita");
+    }
+    
+    public void addCountry(){
+        Scanner input=new Scanner(System.in);
+        System.out.println("PROCEDURA ADD_COUNTRY");
+        System.out.println("Inserire REGION_ID");
+        int idRegion = input.nextInt();
+        eser.country(idRegion);
         System.out.println("Procedura eseguita");
     }
 }

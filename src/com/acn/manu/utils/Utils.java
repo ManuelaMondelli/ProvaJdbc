@@ -64,9 +64,10 @@ public class Utils {
      * @throws java.sql.SQLException
      */
     public static synchronized Connection getConnetion() throws IOException, FileNotFoundException, ClassNotFoundException, SQLException{        
+        
         if( mainUtil == null){
             mainUtil = new Utils();            
-        }        
+        }   
         return conn;
     }
 

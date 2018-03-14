@@ -26,6 +26,7 @@ public class Test {
         //controller.createRecord(); //funziona
         //controller.deleteP(); //funziona
         
-        controller.createHistory();
+        //controller.createHistory();
+        controller.addCountry();
     }
 }
